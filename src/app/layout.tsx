@@ -14,6 +14,8 @@ import { SiteHeader } from "@/components/site-header"
 import { Providers } from "@/components/providers"
 import { siteConfig } from "@/config/site"
 import { SiteFooter } from "@/components/site-footer"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -59,6 +61,8 @@ export default function RootLayout({
             <SiteFooter />
           </div>
         </Providers>
+        <SpeedInsights />
+        <Analytics />
       </body>
       <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID || ""} />
       <GoogleTagManager gtmId={process.env.GOOGLE_TAGMANAGER_ID || ""} />

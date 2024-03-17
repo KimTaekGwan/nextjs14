@@ -12,7 +12,7 @@ function base64ToBytes(base64: string) {
   const bytes = Array.from(binString, (m) => m.codePointAt(0)).filter(
     (byte) => byte !== undefined
   )
-  return Uint8Array.from(bytes)
+  return Uint8Array.from(bytes as number[])
 }
 
 // 출처: https://developer.mozilla.org/en-US/docs/Glossary/Base64#the_unicode_problem.
@@ -26,11 +26,13 @@ export default async function Page() {
   const { data: notes } = await supabase.from("notes").select()
   // return <pre>{JSON.stringify(notes, null, 2)}</pre>
 
-  const directoryData = await fetchGitHubDirectory(owner, repo, path)
-  // return <pre>{JSON.stringify(directoryData, null, 2)}</pre>
-
+  const directoryData = await fetchGitHubDirectory(
+    owner ?? "",
+    repo ?? "",
+    path ?? ""
+  )
   const decodedData = new TextDecoder().decode(
-    base64ToBytes(directoryData.content)
+    base64ToBytes((directoryData as { content: string }).content)
   )
   // console.log(decodedData)
   return <pre className="container py-24 sm:py-32 max-w-4xl">{decodedData}</pre>
