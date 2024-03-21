@@ -48,6 +48,10 @@ export default function RootLayout({
   const isSupabaseConnected = canInitSupabaseClient()
   return (
     <html lang="en" className={GeistSans.className}>
+      <meta
+        name="naver-site-verification"
+        content="a9184199b536a81f98557c8e8d780177d6ec22ff"
+      />
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased text-foreground",
