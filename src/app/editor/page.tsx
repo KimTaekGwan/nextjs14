@@ -1,6 +1,7 @@
-import Editor from "@/components/ui/editor"
 import Github from "@/components/ui/icons/github"
 import Menu from "./menu"
+
+import Editor from "@/components/ui/editor"
 
 export default function Page() {
   return (

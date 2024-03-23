@@ -14,13 +14,12 @@ import SlashCommand from "./slash-command"
 import { InputRule } from "@tiptap/core"
 import UploadImagesPlugin from "@/components/ui/editor/extensions/updated-image"
 import UpdatedImage from "./updated-image"
-import type UpdatedImage from "@/components/ui/editor/extensions/updated-image"
 
-const CustomImage = TiptapImage.extend({
-  addProseMirrorPlugins() {
-    return [UploadImagesPlugin()]
-  },
-})
+// const CustomImage = TiptapImage.extend({
+//   addProseMirrorPlugins() {
+//     return [UploadImagesPlugin()]
+//   },
+// })
 
 export const TiptapExtensions = [
   StarterKit.configure({
@@ -96,12 +95,12 @@ export const TiptapExtensions = [
         "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
     },
   }),
-  CustomImage.configure({
-    allowBase64: true,
-    HTMLAttributes: {
-      class: "rounded-lg border border-stone-200",
-    },
-  }),
+  // CustomImage.configure({
+  //   allowBase64: true,
+  //   HTMLAttributes: {
+  //     class: "rounded-lg border border-stone-200",
+  //   },
+  // }),
   UpdatedImage.configure({
     HTMLAttributes: {
       class: "rounded-lg border border-stone-200",
