@@ -52,6 +52,10 @@ export default function RootLayout({
         name="naver-site-verification"
         content="a9184199b536a81f98557c8e8d780177d6ec22ff"
       />
+      <meta
+        name="google-site-verification"
+        content="4KRskaAvzCRHMPfW4vexmYl8tPkK_6f6kRcWhse1k9w"
+      />
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased text-foreground",
