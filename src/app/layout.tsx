@@ -1,11 +1,6 @@
 import { GeistSans } from "geist/font/sans"
 import "./globals.css"
-import AuthButton from "@/components/AuthButton"
-import DeployButton from "@/components/DeployButton"
-import { createClient } from "@/supabase/server"
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google"
-import { ThemeProvider } from "@/providers/theme-provider"
-import { ThemeButton } from "@/components/ThemeButton"
 
 import { cn } from "@/lib/utils"
 import { Inter } from "next/font/google"
@@ -34,18 +29,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const canInitSupabaseClient = () => {
-    // This function is just for the interactive tutorial.
-    // Feel free to remove it once you have Supabase connected.
-    try {
-      createClient()
-      return true
-    } catch (e) {
-      return false
-    }
-  }
-
-  const isSupabaseConnected = canInitSupabaseClient()
   return (
     <html lang="en" className={GeistSans.className}>
       <meta
